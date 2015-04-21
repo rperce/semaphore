@@ -34,12 +34,12 @@ var conv = {a: '/°|',
             z: 'o\\-'}
 var plaintext = document.getElementById('plaintext').value;
 document.getElementById('semaphore').value = plaintext.split('').map(function(chr) {
-    if (conv[chr]) {
+    if (conv[chr.toLowerCase()]) {
         console.log(conv[chr]);
         return conv[chr];
     }
     return chr;
-});
+}).join();
 
         </script>
     </body>
