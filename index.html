@@ -33,8 +33,8 @@ var conv = {a: '/°|',
             y: '\\o-',
             z: 'o\\-'};
 var rev = {};
-Object.keys(conv).forEach(function(k) { rev[conv[k]] = k; });
-rev['   '] = ' ';
+Object.keys(conv).forEach(function(k) { rev[conv[k].trim()] = k; });
+rev[''] = ' ';
 
 var plaintext = document.getElementById('plaintext');
 var semaphore = document.getElementById('semaphore');
@@ -46,7 +46,7 @@ var setSemVal = function() {
 var setPlnVal = function() {
     plaintext.value = semaphore.value.match(/.{1,4}/g).map(function(phr) {
         var p = phr.trim();
-        return rev[phr] || rev[p] || rev[p + ' '] || p;
+        return rev[p] || p;
     }).join('').toUpperCase();
 };
 plaintext.addEventListener('keyup', setSemVal);
