@@ -32,6 +32,7 @@ var conv = {a: '/°|',
             x: 'o< ',
             y: '\\o-',
             z: 'o\\-'};
+conv[' ']='   '
 var rev = {};
 Object.keys(conv).forEach(function(k) { rev[conv[k]] = k; });
 
