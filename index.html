@@ -6,8 +6,37 @@
         <textarea id="plaintext" cols="50" rows="5">ASCII</textarea>
         <textarea id="semaphore" cols="50" rows="5"></textarea>
         <script>
+var conv = {a: '/°|',
+            b: '-°|',
+            c: '\\°|',
+            d:  '|°|',
+            e: '|°/',
+            f: '|°-',
+            g: '|°\\',
+            h: '-/o',
+            i: '>o ',
+            j: '|o-',
+            k: '/o|',
+            l: '/o/',
+            m: '/o-',
+            n: '/o\\',
+            o: '-\\o',
+            p: '-o|',
+            q: '-o/',
+            r: '-o-',
+            s: '-o\\',
+            t: '\\o|',
+            u: '\\o/',
+            v: '|o\\',
+            w: 'o/-',
+            x: 'o< ',
+            y: '\\o-,
+            z: 'o\\-'}
 var plaintext = document.getElementById('plaintext').value;
-document.getElementById('semaphore').value = plaintext;
+document.getElementById('semaphore').value = plaintext.split('').map(function(chr) {
+    if (conv[chr]) return conv[chr];
+    return chr;
+});
 
         </script>
     </body>
