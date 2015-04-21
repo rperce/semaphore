@@ -32,18 +32,24 @@ var conv = {a: '/°|',
             x: 'o< ',
             y: '\\o-',
             z: 'o\\-'}
+var rev = {};
+conv.keys().forEach(function(k) { rev[conv[k]] = k; });
+
 var plaintext = document.getElementById('plaintext');
-var setVal = function() {
-    document.getElementById('semaphore').value = plaintext.value.split('').map(function(chr) {
-        var c = chr.toLowerCase();
-        if (conv[c]) {
-            return conv[c];
-        }
-        return chr;
+var semaphore = document.getElementById('semaphore');
+var setSemVal = function() {
+    semaphore.value = plaintext.value.split('').map(function(chr) {
+        return conv[chr.toLowerCase()] || (' ' + chr + ' ');
     }).join(' ');
 };
-plaintext.addEventListener('input', setVal);
-setVal();
+var setPlnVal = function() {
+    plaintext.value = plaintext.value.match(/.{1,3}/g).map(function(phr) {
+        return rev[phr] || phr.trim();
+    });
+};
+plaintext.addEventListener('input', setSemVal);
+semaphore.addEventListener('input', setPlnVal);
+setSemVal();
         </script>
     </body>
 </html>
