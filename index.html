@@ -1,12 +1,15 @@
 <html>
     <head>
         <title>Semaphore Ascii</title>
+        <script>
+var plaintext = document.getElementById("plaintext").text;
+document.getElementById("semaphore").text = plaintext;
+
+        </script>
     </head>
     <body>
-        <form>
-            <textarea name="plaintext" cols="50" rows="5">ASCII</textarea>
-            <textarea name="semaphore" cols="50" rows="5"></textarea>
-        </form>
+        <textarea id="plaintext" cols="50" rows="5">ASCII</textarea>
+        <textarea id="semaphore" cols="50" rows="5"></textarea>
     </body>
 </html>
 
