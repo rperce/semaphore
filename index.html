@@ -32,9 +32,9 @@ var conv = {a: '/°|',
             x: 'o< ',
             y: '\\o-',
             z: 'o\\-'};
-conv[' ']='   '
 var rev = {};
 Object.keys(conv).forEach(function(k) { rev[conv[k]] = k; });
+rev['   '] = ' ';
 
 var plaintext = document.getElementById('plaintext');
 var semaphore = document.getElementById('semaphore');
