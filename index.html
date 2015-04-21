@@ -34,7 +34,10 @@ var conv = {a: '/°|',
             z: 'o\\-'}
 var plaintext = document.getElementById('plaintext').value;
 document.getElementById('semaphore').value = plaintext.split('').map(function(chr) {
-    if (conv[chr]) return conv[chr];
+    if (conv[chr]) {
+        console.log(conv[chr]);
+        return conv[chr];
+    }
     return chr;
 });
 
