@@ -43,7 +43,7 @@ var setSemVal = function() {
     }).join(' ');
 };
 var setPlnVal = function() {
-    plaintext.value = plaintext.value.match(/.{1,3}/g).map(function(phr) {
+    plaintext.value = semaphore.value.match(/.{1,3}/g).map(function(phr) {
         return rev[phr] || phr.trim();
     }).join('');
 };
