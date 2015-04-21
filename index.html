@@ -45,7 +45,7 @@ var setSemVal = function() {
 var setPlnVal = function() {
     plaintext.value = plaintext.value.match(/.{1,3}/g).map(function(phr) {
         return rev[phr] || phr.trim();
-    });
+    }).join('');
 };
 plaintext.addEventListener('input', setSemVal);
 semaphore.addEventListener('input', setPlnVal);
