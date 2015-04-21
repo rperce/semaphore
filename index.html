@@ -33,7 +33,7 @@ var conv = {a: '/°|',
             y: '\\o-',
             z: 'o\\-'};
 var rev = {};
-conv.keys().forEach(function(k) { rev[conv[k]] = k; });
+Object.keys(conv).forEach(function(k) { rev[conv[k]] = k; });
 
 var plaintext = document.getElementById('plaintext');
 var semaphore = document.getElementById('semaphore');
