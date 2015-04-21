@@ -35,9 +35,10 @@ var conv = {a: '/°|',
 var plaintext = document.getElementById('plaintext').value;
 console.log(conv['z']);
 document.getElementById('semaphore').value = plaintext.split('').map(function(chr) {
-    if (conv[chr.toLowerCase()]) {
-        console.log(conv[chr]);
-        return conv[chr];
+    var c = character.toLowerCase();
+    if (conv[c]) {
+        console.log(conv[c]);
+        return conv[c];
     }
     return chr;
 }).join();
