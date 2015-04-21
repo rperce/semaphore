@@ -32,17 +32,18 @@ var conv = {a: '/°|',
             x: 'o< ',
             y: '\\o-',
             z: 'o\\-'}
-var plaintext = document.getElementById('plaintext').value;
-console.log(conv['z']);
-document.getElementById('semaphore').value = plaintext.split('').map(function(chr) {
-    var c = chr.toLowerCase();
-    if (conv[c]) {
-        console.log(conv[c]);
-        return conv[c];
-    }
-    return chr;
-}).join(' ');
-
+var plaintext = document.getElementById('plaintext');
+var setVal = function() {
+    document.getElementById('semaphore').value = plaintext.value.split('').map(function(chr) {
+        var c = chr.toLowerCase();
+        if (conv[c]) {
+            return conv[c];
+        }
+        return chr;
+    }).join(' ');
+};
+plaintext.addEventListener('input', setVal);
+setVal();
         </script>
     </body>
 </html>
