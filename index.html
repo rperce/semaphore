@@ -43,8 +43,8 @@ var setSemVal = function() {
     }).join(' ');
 };
 var setPlnVal = function() {
-    plaintext.value = semaphore.value.match(/.{1,3}/g).map(function(phr) {
-        return rev[phr] || phr.trim();
+    plaintext.value = semaphore.value.match(/.{1,4}/g).map(function(phr) {
+        return rev[phr.trim()] || phr.trim();
     }).join('');
 };
 plaintext.addEventListener('keyup', setSemVal);
