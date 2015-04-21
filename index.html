@@ -46,7 +46,7 @@ var setSemVal = function() {
 var setPlnVal = function() {
     plaintext.value = semaphore.value.match(/.{1,4}/g).map(function(phr) {
         var p = phr.trim();
-        return rev[p] || rev[p + ' '] || p;
+        return rev[phr] || rev[p] || rev[p + ' '] || p;
     }).join('').toUpperCase();
 };
 plaintext.addEventListener('keyup', setSemVal);
