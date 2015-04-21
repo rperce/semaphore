@@ -47,8 +47,10 @@ var setPlnVal = function() {
         return rev[phr] || phr.trim();
     }).join('');
 };
-plaintext.addEventListener('input', setSemVal);
-semaphore.addEventListener('input', setPlnVal);
+plaintext.addEventListener('keyup', setSemVal);
+plaintext.addEventListener('paste', setSemVal);
+semaphore.addEventListener('keyup', setPlnVal);
+semaphore.addEventListener('paste', setPlnVal);
 setSemVal();
         </script>
     </body>
